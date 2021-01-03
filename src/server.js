@@ -1,11 +1,10 @@
 const express = require('express');
 
+const { commonMiddleware } = require('./middlewares/commonMiddleware')
+
 const userRoutes = require('./routes/userRoutes');
 
 commonMiddleware(app, express)
-
-// Body parser, reading data from body into req.body
-app.use(express.json());
 
 app.use('/api/users', userRoutes);
 
