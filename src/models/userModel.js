@@ -1,7 +1,7 @@
-const dbConnect = require('./../utils/dbUtil');
+const mongoUtil = require('./../utils/MongoUtil');
 const validator = require('validator');
 
-const mongoose = dbConnect();
+const mongoose = mongoUtil.getConnection();
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -19,18 +19,18 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'Please provide a valid email address'],
   },
-  phone: [
+  phone: {
     ext: {
       type: String,
       required: true
     },
     number: {
       type: Number,
-      required true,
+      required: true,
     }
-  ],
+  },
   bloodGroup: String,
-  address: [
+  address: {
     city: {
       type: String,
       required: true
@@ -43,10 +43,7 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true
     }
-  ]
-    
-  
-
+  }
 });
 
 const User = mongoose.model('User', userSchema);
