@@ -1,9 +1,9 @@
-import cors from 'cors'
-import helmet from 'helmet'
-import compression from 'compression'
-import morgan from 'morgan'
+const cors = require('cors')
+const helmet = require('helmet')
+const compression = require('compression')
+const morgan = require('morgan')
 
-export const commonMiddleware = (app, express) => {
+exports.commonMiddleware = (app, express) => {
   app.use(express.json({ limit: '10kb' }))
   app.use(express.urlencoded({ extended: true }))
   app.use(cors())
