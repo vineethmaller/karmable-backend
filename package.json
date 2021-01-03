@@ -1,0 +1,32 @@
+{
+  "name": "karmable-backend",
+  "version": "1.0.0",
+  "description": "An app where volunteers and NGOs meet for the greater good.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vineethmaller/karmable-backend.git"
+  },
+  "author": [
+    "Vineeth Maller",
+    "Valentin Ispas"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vineethmaller/karmable-backend/issues"
+  },
+  "homepage": "https://github.com/vineethmaller/karmable-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
